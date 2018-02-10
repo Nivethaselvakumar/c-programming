@@ -20,8 +20,7 @@ int main(void) {
 				k--;
 				j--;
 			}
-		else
-			printf("unique");
+		
 		}
 	}
 	for(i=0;i<k;i++)
