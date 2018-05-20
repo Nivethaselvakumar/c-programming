@@ -2,13 +2,25 @@
 
 int main(void) {
 	// your code goes here
-int i,k,n,a[100],b[100],j,temp,l=3;
+int i,k,n,a[100],b[100],j,temp,p,l=3;
 scanf("%d",&n);
 scanf("%d",&k);
 for(i=0;i<n;i++)
 {
 	scanf("%d",&a[i]);
 }
+for(i=0;i<n;i++)
+{
+	if(a[i]==k)
+	{
+		for(p=i;p<n;p++)
+		{
+		a[p]=a[p+1];
+		}
+		n--;
+	}
+}
+
 for(i=0;i<n;i++)
 {
 	
@@ -29,15 +41,8 @@ for(i=0;i<n;i++)
 }
 for(i=0;i<l;i++)
 {
-if(b[i]==0)
-{
-	l++;
-b[i]=b[i+1];
-b[i+1]=b[i+2];
-l--;
-}
+printf("%d",(b[i]+k));
 
-printf("%d\n",(b[i]+k));
 }
 	return 0;
 }
