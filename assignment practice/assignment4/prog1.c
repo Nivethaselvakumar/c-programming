@@ -1,33 +1,34 @@
 #include <stdio.h>
 
 int main(void) {
-	int i,k,a[100],j,l,temp;
-	scanf("%d",&k);
-	for(i=0;i<k;i++)
+	// your code goes here
+	int n,a[100],i,temp,j,count=0,l;
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
 	{
 		scanf("%d",&a[i]);
 	}
-	for(i=0;i<k;i++)
+	for(i=0;i<n;i++)
 	{
-		for(j=i+1;j<k;j++)
+	for(j=i+1;j<n;j++)
+	{
+		if(a[i]==a[j])
 		{
-			if(a[i]==a[j])
-			{
-				for(l=j;l<k;l++)
+			count++;
+		for(l=j;l<n;l++)
 				{
 				a[l]=a[l+1];
 				}
-				k--;
+				n--;
 				j--;
-			}
-		
 		}
 	}
-	for(i=0;i<k;i++)
+	}
+	for(i=0;i<n;i++)
 	{
-		for(j=i+1;j<k;j++)
+		for(j=i+1;j<n;j++)
 		{
-			if(a[i]<a[j])
+			if(a[i]>a[j])
 			{
 				temp=a[i];
 				a[i]=a[j];
@@ -35,9 +36,16 @@ int main(void) {
 			}
 		}
 	}
-	for(i=0;i<k;i++)
+	if(count==0)
+	{
+	printf("unique");
+	}
+	else
+	{
+	for(i=0;i<n;i++)
 	{
 		printf("%d",a[i]);
+	}
 	}
 	return 0;
 }
